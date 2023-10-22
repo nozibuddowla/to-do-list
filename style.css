@@ -17,8 +17,9 @@
     max-width: 540px;
     background: #fff;
     margin: 100px auto 20px;
-    padding: 40px;
+    padding: 80px;
     border-radius: 10px;
+    position: relative;
 }
 
 .todo-app h2 {
@@ -50,9 +51,10 @@
     background: transparent;
     padding: 10px;
     font-weight: 14px;
+    
 }
 
-.row button {
+.row button, #clear_task_button {
     border: none;
     outline: none;
     padding: 16px 50px;
@@ -63,7 +65,15 @@
     border-radius: 30px;
 }
 
-#list-container li {
+#clear_task_button {
+    position: absolute;
+    right:  40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul li {
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
@@ -72,7 +82,7 @@
     position: relative;
 }
 
-#list-container li::before {
+ul li::before {
     content: '';
     position: absolute;
     height: 28px;
@@ -85,11 +95,29 @@
     left: 8px;
 }
 
-.checked {
+ul li.checked {
     color: #555;
     text-decoration: line-through;
 }
 
-#list-container li.checked::before {
+ul li.checked::before {
     background-image: url(images/checked.png);
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeff0;
 }
